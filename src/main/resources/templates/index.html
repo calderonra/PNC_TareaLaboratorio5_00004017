@@ -9,19 +9,19 @@
 <form th:action="@{/form}" th:object="${estudiante}" method="post">
 
     <label>Nombre del Alumno:</label>
-    <input class="form-control" type="text" th:field="*{nombre}">
+    <input  type="text" th:field="*{nombre}">
     <span th:errors="*{nombre}" style=color:#FF0000></span><br>
 
     <label>Apellido:</label>
-    <input  class="form-control" type="text" th:field="*{apellido}">
+    <input  type="text" th:field="*{apellido}">
     <span th:errors="*{apellido}" style=color:#FF0000></span><br>
 
     <label>Carne del alumno</label>
-    <input  class="form-control" type="text" th:field="*{carne}">
+    <input  type="text" th:field="*{carne}">
     <span th:errors="*{carne}" style=color:#FF0000></span><br>
 
     <label>Carrera:</label>
-    <input  class="form-control" type="text" th:field="*{carrera}">
+    <input   type="text" th:field="*{carrera}">
     <span th:errors="*{carrera}" style=color:#FF0000></span><br>
 
     <input type="submit"  value="Agregar">

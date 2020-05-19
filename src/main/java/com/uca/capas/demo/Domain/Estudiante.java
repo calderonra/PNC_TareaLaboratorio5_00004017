@@ -17,25 +17,25 @@ public class Estudiante {
     private Integer codigoEstudiante;
 
     @Column(name="nombre")
-    @NotEmpty()
-    @Size(message = "El nombre no debe tener mas de 50 de caracteres", max = 50)
-    private String Nombre;
+    @Size(max = 50,message = "El nombre no debe tener mas de 50 de caracteres")
+    @NotEmpty(message="Este campo no puede quedar vacio")
+    private String nombre;
 
 
     @Column(name="apellido")
-    @Size(message = "El apellido no debe tener mas de 50 de caracteres", max = 50)
-    @NotEmpty()
-    private String Apellido;
+    @Size( max = 50,message = "El apellido no debe tener mas de 50 de caracteres")
+    @NotEmpty(message="Este campo no puede quedar vacio")
+    private String apellido;
 
     @Column(name = "carne")
-    @Size(message = "El carne debe tener exactamente 10 caracteres", max = 10 , min = 10)
-    @NotEmpty()
-    private String Carne;
+    @Size(max = 10 ,message = "El carne debe tener exactamente 10 caracteres" )
+    @NotEmpty(message="Este campo no puede quedar vacio")
+    private String carne;
 
     @Column(name = "carrera")
-    @Size(message = "La carrera no debe tener mas de 100 de caracteres", max = 100)
-    @NotEmpty()
-    private String Carrera;
+    @Size( max = 100,message = "La carrera no debe tener mas de 100 de caracteres")
+    @NotEmpty(message="Este campo no puede quedar vacio")
+    private String carrera;
 
     public Estudiante() {
     }
@@ -49,36 +49,34 @@ public class Estudiante {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
+        this.apellido = apellido;
     }
 
     public String getCarne() {
-        return Carne;
+        return carne;
     }
 
     public void setCarne(String carne) {
-        Carne = carne;
+        this.carne = carne;
     }
 
-
     public String getCarrera() {
-        return Carrera;
+        return carrera;
     }
 
     public void setCarrera(String carrera) {
-        Carrera = carrera;
+        this.carrera = carrera;
     }
-
 }

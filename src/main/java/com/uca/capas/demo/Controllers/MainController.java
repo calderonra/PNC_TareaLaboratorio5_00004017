@@ -3,6 +3,7 @@ package com.uca.capas.demo.Controllers;
 import com.uca.capas.demo.DAO.EstudianteDAO;
 import com.uca.capas.demo.Domain.Estudiante;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -43,12 +45,11 @@ public class MainController {
         return mav;
     }
 
-    @RequestMapping(value = "/form")
-    public ModelAndView findOne( @ModelAttribute Estudiante estudiante, BindingResult result){
+    @RequestMapping("/form")
+    public ModelAndView findOne(@Valid @ModelAttribute Estudiante estudiante, BindingResult result){
         ModelAndView mav = new ModelAndView();
         if(result.hasErrors()){
             mav.setViewName("index");
-            return mav;
         }else{
             try {
                 estudianteDAO.insertEstudiante(estudiante);
